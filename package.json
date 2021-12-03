@@ -1,5 +1,5 @@
 {
-  "name": "final-homework-tests",
+  "name": "atsea-sample-shop-app-tests",
   "version": "1.0.0",
   "description": "Final homework tests for Praxis 2021-2",
   "main": "index.js",
@@ -11,17 +11,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Rendxn/praxis-final-tests-template.git"
+    "url": "git+https://github.com/svalenciaz/atsea-sample-shop-app-tests.git"
   },
   "keywords": [
     "test"
   ],
-  "author": "Santiago Rendon <santirg2000@gmail.com>",
+  "author": "Santiago Alexis Valencia Zapata <santialexisvalencia@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Rendxn/praxis-final-tests-template/issues"
+    "url": "https://github.com/svalenciaz/atsea-sample-shop-app-tests/issues"
   },
-  "homepage": "https://github.com/Rendxn/praxis-final-tests-template#readme",
+  "homepage": "https://github.com/svalenciaz/atsea-sample-shop-app-tests#readme",
   "devDependencies": {
     "@types/chai": "^4.2.22",
     "@types/mocha": "^9.0.0",
