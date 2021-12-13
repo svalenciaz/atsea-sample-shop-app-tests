@@ -105,7 +105,7 @@ describe('Customer Api Test', () => {
     });
   });
 
-  describe('when getting a customer by id', () => {
+  describe('when getting a customer by name', () => {
     it('should return the customer information', async () => {
       const response = await get(`${customerAPIURL}/name=${genericCustomer.name}`);
       expect(response.status).to.equal(StatusCodes.OK);
@@ -113,7 +113,7 @@ describe('Customer Api Test', () => {
       expect(response.body.name).to.equal(genericCustomer.name);
     });
 
-    it(`should return a not found message if doesn't exist a customer with the id`, async () => {
+    it(`should return a not found message if doesn't exist a customer with the name`, async () => {
       let response;
       const noName = 'Unexists Null'
       try {
