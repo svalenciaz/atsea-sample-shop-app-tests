@@ -2,10 +2,12 @@ import { browser, ExpectedConditions } from 'protractor';
 import { del } from 'superagent';
 import { CreateUserModalPage, HeaderIndexPage } from 'src/pages';
 import * as chai from 'chai';
+import dotenv = require('dotenv');
+dotenv.config();
 const { expect } = chai;
 
-const customerAPIURL = 'http://localhost:8080/api/customer/';
-const dockerInternalURL = 'http://host.docker.internal:8080/';
+const customerAPIURL = `${process.env.URL_API_BASE}/api/customer/`;
+const dockerInternalURL = `${process.env.HOST_DOCKER_INTERNAL}`;
 
 const headerIndex: HeaderIndexPage = new HeaderIndexPage();
 const createUserModal: CreateUserModalPage = new CreateUserModalPage();

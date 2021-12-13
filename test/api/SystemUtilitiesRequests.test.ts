@@ -3,11 +3,14 @@ import { StatusCodes } from 'http-status-codes';
 import * as chai from 'chai';
 import * as chaiSubset from 'chai-subset';
 import * as chaiJsonSchema from 'chai-json-schema';
+import dotenv = require('dotenv')
+dotenv.config()
 chai.use(chaiSubset);
 chai.use(chaiJsonSchema);
 const { expect } = chai;
 
-const utilityAPIURL = 'http://localhost:8080/utility/'
+const baseURL = process.env.URL_API_BASE;
+const utilityAPIURL = `${baseURL}/utility/`;
 
 describe('System Utilities Api Test', () => {
   describe('when doing a database healthcheck', () => {

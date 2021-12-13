@@ -5,11 +5,14 @@ import * as chaiSubset from 'chai-subset';
 import * as chaiJsonSchema from 'chai-json-schema';
 import { OrderSchema, OrderUpdatedSchema ,OrderListSchema } from 'src/schemas/Order.schema';
 import { Order } from 'src/models/Order';
+import dotenv = require('dotenv')
+dotenv.config()
 chai.use(chaiSubset);
 chai.use(chaiJsonSchema);
 const { expect } = chai;
 
-const orderAPIURL = 'http://localhost:8080/api/order/' ;
+const baseURL = process.env.URL_API_BASE;
+const orderAPIURL = `${baseURL}/api/order/`;
 
 const genericOrder: Order = {
   orderId: 0,

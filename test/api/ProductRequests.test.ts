@@ -4,11 +4,14 @@ import * as chai from 'chai';
 import * as chaiSubset from 'chai-subset';
 import * as chaiJsonSchema from 'chai-json-schema';
 import { ProductListSchema, ProductSchema } from 'src/schemas/Product.schema';
+import dotenv = require('dotenv')
+dotenv.config()
 
 chai.use(chaiSubset);
 chai.use(chaiJsonSchema);
 const { expect } = chai;
-const productAPIURL = 'http://localhost:8080/api/product/'
+const baseURL = process.env.URL_API_BASE;
+const productAPIURL = `${baseURL}/api/product/`;
 
 describe('Product Api Test', () => {
 

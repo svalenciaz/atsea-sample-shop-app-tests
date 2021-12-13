@@ -5,11 +5,14 @@ import * as chaiSubset from 'chai-subset';
 import * as chaiJsonSchema from 'chai-json-schema';
 import { CustomerSchema } from 'src/schemas/Customer.schema';
 import { Customer } from 'src/models/Customer';
+import dotenv = require('dotenv')
+dotenv.config()
 
 chai.use(chaiSubset);
 chai.use(chaiJsonSchema);
 const { expect } = chai;
-const customerAPIURL = 'http://localhost:8080/api/customer/'
+const baseURL = process.env.URL_API_BASE;
+const customerAPIURL = `${baseURL}/api/customer/`
 
 const genericCustomer : Customer = {
   customerId : 0,
