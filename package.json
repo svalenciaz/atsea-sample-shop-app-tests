@@ -4,11 +4,11 @@
   "description": "Final homework tests for Praxis 2021-2",
   "main": "index.js",
   "scripts": {
-    "clean": "rm -rf dist mochawesome-reports mochawesome-report",
+    "clean": "rm -rf dist",
     "lint": "eslint test/**/*.{ts,js} src/**/*.{ts,js}",
     "build": "npm run clean && tsc",
     "test": "mocha -r tsconfig-paths/register -r ts-node/register \"test/**/*.test.ts\"",
-    "test:api": "npm run build && mocha -t 5000 --reporter mochawesome -r tsconfig-paths/register -r ts-node/register/transpile-only \"test/api/**/*.test.ts\"",
+    "test:api": "npm run build && mocha -t 5000 --reporter mochawesome --reporter-options reportDir=report/report-api,reportFilename=index.html -r tsconfig-paths/register -r ts-node/register/transpile-only \"test/api/**/*.test.ts\"",
     "test:ui": "npm run build && protractor protractor/launcher.js"
   },
   "repository": {

@@ -154,5 +154,6 @@ dist
 ### Mochawesome reports ###
 mochawesome-report/
 mochawesome-reports/
+report/
 
 # End of https://www.toptal.com/developers/gitignore/api/node,visualstudiocode
