@@ -5,7 +5,7 @@ dotenv.config();
 export const config: Config = {
   framework: 'mocha',
   specs: ['../test/ui/**/*.spec.ts'],
-  seleniumAddress: process.env.SELENIUM_ADDRESS,
+  seleniumAddress: 'http://0.0.0.0:4444',
   SELENIUM_PROMISE_MANAGER : false,
   mochaOpts: {
     reporter: 'mochawesome-screenshots',
