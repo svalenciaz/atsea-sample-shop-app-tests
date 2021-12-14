@@ -12,11 +12,11 @@ export const config: Config = {
     reporterOptions: {
       reportDir: 'report/report-ui',
       reportName: 'index',
-      takePassedScreenshot: true,
+
       clearOldScreenshots: true,
-      shortScrFileNames: false
+      multiReport: true
   },
-    timeout: 120000,
+    timeout: 400000,
   },
   onPrepare: async () => {
     await browser.waitForAngularEnabled(false);
@@ -27,6 +27,7 @@ export const config: Config = {
     browserName: 'firefox',
     name: 'firefox-tests',
     shardTestFiles: true,
+    acceptInsecureCerts: true,
     maxInstances: 1,
     /*'moz:firefoxOptions': {
       args: ['-headless'],
@@ -36,6 +37,7 @@ export const config: Config = {
     name: 'chrome-tests',
     shardTestFiles: true,
     maxInstances: 1,
+    acceptInsecureCerts: true,
     chromeOptions: {
       args: [
         '--disable-popup-blocking',
