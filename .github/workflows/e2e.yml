@@ -37,7 +37,10 @@ jobs:
         aws-region: ${{ env.AWS_REGION }}
     - run: npm ci
     - name: Running API tests
+      env:
+        NODE_TLS_REJECT_UNAUTHORIZED: '0'
       run: npm run test:api
+
     - name: Upload reports to AWS bucket
-      run: aws s3 sync ./mochawesome-report ${{ secrets.AWS_BUCKET }}/api-tests-report
+      run: aws s3 sync ./report/report-api ${{ secrets.AWS_BUCKET }}/api-tests-report
       if: ${{ always() }}
