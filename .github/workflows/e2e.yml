@@ -17,6 +17,10 @@ jobs:
       URL_API_BASE: https://ec2-18-189-239-207.us-east-2.compute.amazonaws.com
 
     steps:
+    - name: Sleep for 10s
+      uses: juliangruber/sleep-action@v1
+      with:
+        time: 10s
     - name: Checkout to branch ${{ env.DEFAULT_BRANCH }}
       uses: actions/checkout@v2
 
