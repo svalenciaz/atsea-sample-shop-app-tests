@@ -14,10 +14,15 @@ jobs:
       DEFAULT_BRANCH: master
       NODE_VERSION: 14.x
       AWS_REGION: us-east-1
+      URL_API_BASE: https://ec2-18-189-239-207.us-east-2.compute.amazonaws.com
 
     steps:
     - name: Checkout to branch ${{ env.DEFAULT_BRANCH }}
       uses: actions/checkout@v2
+
+    - name: add .env
+      run: |
+        export URL_API_BASE="${{ secrets.URL_API_BASE }}"
 
     - name: Use Node.js ${{ env.NODE_VERSION }}
       uses: actions/setup-node@v1
