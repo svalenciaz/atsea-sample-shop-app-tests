@@ -37,10 +37,10 @@ jobs:
         aws-region: ${{ env.AWS_REGION }}
     - run: npm ci
 
-    - name: Sleep for 60s
+    - name: Sleep for 80s
       uses: juliangruber/sleep-action@v1
       with:
-        time: 60s
+        time: 80s
 
 
 
@@ -60,6 +60,7 @@ jobs:
       NODE_VERSION: 14.x
       AWS_REGION: us-east-1
       URL_API_BASE: https://ec2-18-189-239-207.us-east-2.compute.amazonaws.com
+      HOST_DOCKER_INTERNAL: https://ec2-18-189-239-207.us-east-2.compute.amazonaws.com
     steps:
       - name: Checkout to branch ${{ env.DEFAULT_BRANCH }}
         uses: actions/checkout@v2
@@ -68,6 +69,7 @@ jobs:
         run: |
           export URL_API_BASE="${{ secrets.URL_API_BASE }}"
           export HOST_DOCKER_INTERNAL="${{ secrets.HOST_DOCKER_INTERNAL }}"
+          echo ${{ secrets.HOST_DOCKER_INTERNAL }}
 
       - name: Use Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v1
