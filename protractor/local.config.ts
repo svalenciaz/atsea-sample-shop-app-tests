@@ -16,7 +16,7 @@ export const config: Config = {
       clearOldScreenshots: true,
       multiReport: true
   },
-    timeout: 400000,
+    timeout: 100000,
   },
   onPrepare: async () => {
     await browser.waitForAngularEnabled(false);
@@ -29,9 +29,6 @@ export const config: Config = {
     shardTestFiles: true,
     acceptInsecureCerts: true,
     maxInstances: 1,
-    /*'moz:firefoxOptions': {
-      args: ['-headless'],
-    },*/
   }, {
     browserName: 'chrome',
     name: 'chrome-tests',
